@@ -2,20 +2,27 @@ import React from 'react'
 import ReactDom from 'react-dom';
 
 
-function Greeting()
+function BookList()
 {
-  return(
-    <div>
-      <Person/>
-      <Message/>
-    </div>
-  )
+  return <section> 
+          <Book/>
+        
+     </section>
+  
 }
 
-const Person = () =>  <h2>John Doe</h2>
-const Message = ()=> {
-  return <p>This is my message</p>
-
+const Book = () => {
+  return <article>
+         <Image/>
+         <Title/>
+         <Author/>
+  </article>
 }
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+
+const Image = () => <img src="https://images.thenile.io/r1000/9781848690691.jpg" alt=""/>
+
+const Title = () => 
+<h1>I Love You To The Moon & Back</h1>
+const Author = () => <h4>Amelia Hepworth</h4>
+ReactDom.render(<BookList/>, document.getElementById('root'));
 
